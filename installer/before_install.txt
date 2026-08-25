@@ -1,0 +1,35 @@
+Classic Mac Voices SAPI 5
+=========================
+
+This installs the speech synthesizer from Mac OS X 10.5 Leopard as a set of
+Windows SAPI 5 voices, for use with NVDA, Narrator and any other program that
+speaks through SAPI 5.
+
+What will be installed:
+
+  * All 24 voices: Alex, Vicki, Agnes, Bruce, Victoria, Albert, Bad News,
+    Bahh, Bells, Boing, Bubbles, Cellos, Deranged, Fred, Good News,
+    Hysterical, Junior, Kathy, Pipe Organ, Princess, Ralph, Trinoids,
+    Whisper and Zarvox. All of them speak US English.
+  * The 32-bit and the 64-bit SAPI 5 interface, so both 32-bit and 64-bit
+    programs can use the voices.
+  * The speech engine itself, including Alex's full 670 MB voice bank.
+  * The Classic Mac Voices settings utility, with a desktop shortcut. It
+    adjusts voice, rate, pitch, volume, inflection and the engine's reading
+    behaviour; every change takes effect immediately in any program that is
+    speaking.
+
+After the installation finishes, the final page states whether each interface
+registered successfully. A full installation log is saved next to the program
+files, and the speech engine writes its own logs to
+%LOCALAPPDATA%\ClassicMacVoices\Logs - the Start menu has a shortcut that
+opens that folder.
+
+Two notes:
+
+  * Alex and Vicki need the AAC audio decoder that Windows normally ships.
+    On Windows N editions without the Media Feature Pack, those two voices
+    are hidden rather than offered silent; the other 22 work everywhere.
+  * Settings are stored in %APPDATA%\ClassicMacVoices\settings.ini - a plain
+    file, not the registry - so they survive reinstalls and can be copied
+    between machines.

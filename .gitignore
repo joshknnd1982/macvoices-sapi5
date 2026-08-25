@@ -1,0 +1,8 @@
+build
+build_x64
+build_x86
+output
+dist
+bin
+samples
+__pycache__

@@ -1,0 +1,64 @@
+#include <windows.h>
+#include "resource.h"
+
+// Every control is a standard Win32 control, in the tab order it is written here, and
+// every input is immediately preceded by the label that names it - which is how screen
+// readers associate the two. Nothing is owner-drawn.
+
+IDD_CONFIG DIALOGEX 0, 0, 340, 330
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
+CAPTION "Classic Mac Voices settings"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    LTEXT           "&Voice:", -1, 7, 9, 100, 8
+    COMBOBOX        IDC_VOICE, 120, 7, 145, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+
+    LTEXT           "&Rate (0 to 100):", -1, 7, 27, 100, 8
+    EDITTEXT        IDC_RATE, 120, 25, 40, 12, ES_NUMBER | ES_RIGHT
+    CONTROL         "", IDC_RATE_SPIN, "msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS, 0, 0, 11, 12
+    AUTOCHECKBOX    "Rate &boost (up to 1200 words per minute)", IDC_RATEBOOST, 170, 25, 160, 10
+
+    LTEXT           "&Pitch (0 to 100):", -1, 7, 45, 100, 8
+    EDITTEXT        IDC_PITCH, 120, 43, 40, 12, ES_NUMBER | ES_RIGHT
+    CONTROL         "", IDC_PITCH_SPIN, "msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS, 0, 0, 11, 12
+
+    LTEXT           "V&olume (0 to 100):", -1, 7, 63, 100, 8
+    EDITTEXT        IDC_VOLUME, 120, 61, 40, 12, ES_NUMBER | ES_RIGHT
+    CONTROL         "", IDC_VOLUME_SPIN, "msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS, 0, 0, 11, 12
+
+    LTEXT           "&Inflection (0 to 100):", -1, 7, 81, 100, 8
+    EDITTEXT        IDC_INFLECTION, 120, 79, 40, 12, ES_NUMBER | ES_RIGHT
+    CONTROL         "", IDC_INFLECTION_SPIN, "msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ALIGNRIGHT | UDS_ARROWKEYS, 0, 0, 11, 12
+
+    AUTOCHECKBOX    "Accept &embedded speech commands in text", IDC_COMMANDS, 7, 99, 320, 10
+
+    LTEXT           "&Gap between announcement parts:", -1, 7, 117, 130, 8
+    COMBOBOX        IDC_GAP, 170, 115, 95, 80, CBS_DROPDOWNLIST | WS_TABSTOP
+
+    LTEXT           "Engine phrase brea&ks:", -1, 7, 135, 130, 8
+    COMBOBOX        IDC_PHRASING, 170, 133, 95, 100, CBS_DROPDOWNLIST | WS_TABSTOP
+
+    AUTOCHECKBOX    "Brea&the between sentences when reading continuously", IDC_BREATHE, 7, 153, 320, 10
+
+    LTEXT           "&Number reading:", -1, 7, 171, 130, 8
+    COMBOBOX        IDC_NUMBERS, 170, 169, 95, 80, CBS_DROPDOWNLIST | WS_TABSTOP
+
+    AUTOCHECKBOX    "Expand &abbreviations (5KB, 1,234MB, 20ish, DR, ST, XIV)", IDC_ABBREV, 7, 187, 320, 10
+    AUTOCHECKBOX    "&Fix words the engine stresses wrongly (colon, as in 3:45)", IDC_STRESS, 7, 201, 320, 10
+
+    LTEXT           "Te&st text:", -1, 7, 221, 100, 8
+    EDITTEXT        IDC_TESTTEXT, 7, 231, 326, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "&Test", IDC_TEST, 7, 249, 60, 14
+    PUSHBUTTON      "Sto&p", IDC_STOP, 72, 249, 60, 14
+
+    LTEXT           "Changes take effect immediately and are saved as you make them.",
+                    IDC_STATUS, 7, 271, 326, 8
+
+    PUSHBUTTON      "Restore &defaults", IDC_DEFAULTS, 7, 289, 80, 14
+    DEFPUSHBUTTON   "&Close", IDOK, 223, 289, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 278, 289, 50, 14
+END
