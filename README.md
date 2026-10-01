@@ -64,3 +64,9 @@ saves its own log as `install.log` beside the program files. `CLASSICMAC_LOG_LEV
 The engine host and the measured voice behaviour come from the panthera NVDA add-on
 family, which first brought these voices to Windows for NVDA. The voices themselves
 are Apple's, from Mac OS X 10.5 Leopard.
+
+## License
+
+The code written for this project is licensed under the MIT License - see
+[LICENSE](LICENSE). Apple's speech engine and voices, and a few source files taken
+from other projects, are not covered by it; see [NOTICE.md](NOTICE.md).
